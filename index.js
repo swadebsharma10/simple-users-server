@@ -13,16 +13,12 @@ const users =[
     {id: 2, name: 'Bobita', email: 'bobita@gmail.com'},
     {id: 3, name: 'Kobita', email: 'kobita@gmail.com'},
     {id: 4, name: 'Sobita', email: 'sobita@gmail.com'},
-]
+];
 
 app.get('/', (req, res) => {
-  res.send('Hello User Is Running!')
-})
-
-
-app.get('/users', (req , res) =>{
-    res.send(users)
-})
+    res.send('Hello User Is Running!')
+  })
+  
 
 app.post('/users', (req, res)=>{
     const newUser = req.body;
@@ -33,6 +29,14 @@ app.post('/users', (req, res)=>{
     res.send(newUser)
     
 })
+
+
+
+app.get('/users', (req , res) =>{
+    res.send(users)
+})
+
+
 
 app.listen(port, () => {
   console.log(`User server is running on port ${port}`)
